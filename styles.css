@@ -1,0 +1,57 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    overflow: hidden; /* Чтобы обрезать часть фона за пределами экрана */
+    background-image: url('cat-dance.gif'); /* Путь к вашему GIF-файлу с котами */
+    background-size: cover;
+    background-position: center;
+}
+
+#message {
+    font-size: 2em;
+    margin: 20px 0;
+    transition: color 0.3s;
+    position: absolute;
+    top: 20px;
+}
+
+.heart {
+    --heart-color: red;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    transform: rotate(-45deg);
+    transition: all 0.3s;
+    cursor: pointer;
+    background-color: var(--heart-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.heart::before,
+.heart::after {
+    content: "";
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--heart-color);
+    position: absolute;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    top: 0;
+    left: 50px;
+}
